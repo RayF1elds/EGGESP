@@ -1,1 +1,61 @@
-https://discord.com/api/webhooks/1385202461480063016/0FDkS-7VH35OcphewhVDUg4Gmq4JmybdPKLwFHcM_fS33VrO-KHCt5UJ2NBxs9BZAyKu
+-- WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua'))()
+local Window = OrionLib:MakeWindow({Name = "Flandre Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+
+local Section = Tab:AddSection({Name = "này bản free nên có v thôi,đòi hỏi = cho script cook"})
+local Section = Tab:AddSection({Name = "kill aura👇"})
+Tab:AddButton({
+  Name = "bật kill aura (áp dụng với sea2 và raid)",
+  Callback = function()
+    getgenv().G = true
+    getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
+    while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
+      wait(0.9)
+      sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+      sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+      for i, d in pairs(game.Workspace:GetDescendants()) do
+        if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+          d.Health = 0
+        end
+      end
+    end
+    print("button pressed")
+  end
+})
+
+local Section = Tab:AddSection({Name = "get armor 200m - 90b👇 (cần nhiều ng trong sv)"})
+Tab:AddButton({
+  Name = "copy all armor",
+  Callback = function()
+    local Players = game:GetService("Players")
+    local armors = {"Cursed-Armor", "Unique-Armor", "Darkness-Armor", "Thunder-Armor", "Thunder-Armor", "Diamond-Armor", "Golden-Armor", "Epic-Armor", "Iron-Armor", "Wooden-Armor"}
+    for _, player in pairs(Players:GetPlayers()) do
+      local backpack = player:FindFirstChild("Backpack")
+      if backpack then
+        for _, armorName in pairs(armors) do
+          local armor = backpack:FindFirstChild(armorName)
+          if armor and armor:FindFirstChild("K") and armor.K:FindFirstChild("Fire") then
+            armor.K.Fire:FireServer()
+          end
+        end
+      end
+    end
+    print("button pressed")
+  end
+})
+
+local Section = Tab:AddSection({Name = "fast attack👇"})
+Tab:AddButton({
+  Name = "cid",
+  Callback = function()
+    local args = {[1] = 8, [2] = 1}
+    while true do
+      game:GetService("Players").LocalPlayer.PlayerGui.Tengen.Skill1b.Z.TextButtonm1.Hitbox:FireServer(unpack(args))
+      wait(0)
+    end
+    print("button pressed")
+  end
+})
+
+-- Additional fast attack buttons: geto, escanor, guts, yoru v3, each with similar loop logic
